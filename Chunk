@@ -1,0 +1,42 @@
+function chunk(arr, n) {
+	var numGroups = parseInt(arr.length / n);
+ 	var remainder = parseInt(arr.length % n);
+  if (remainder > 0){
+  	numGroups++;
+	}
+  alert(numGroups);
+ 	var bigArray = [];
+ 	var marker = 0;
+ 	var y;
+	for (y = 0; y < numGroups; y++) {
+ 		var subSet = [];
+ 		for (var z = 0; z < n; z++) {
+  		if (marker >= arr.length) {
+      	//alert(marker+" is >= to arr.Length");
+      	break;
+      }
+  		subSet[z] = arr[marker];
+  		marker++;
+ 		}
+		bigArray[y] = subSet;
+	}
+  console.log(bigArray);
+  return(bigArray);
+}
+
+function runTest1() {
+	var array = ['a','b','c','d'];
+	var splitArray = chunk(array,2);
+  return splitArray;
+}
+
+function runTest2() {
+var array = ['a','b','c','d'];
+var splitArray = chunk(array,3);
+	return splitArray;
+}
+
+console.log("Test 1: chunk(array,2)");
+var split1 = runTest1();
+console.log("Test 2: chunk(array,3)");
+var split2 = runTest2();
