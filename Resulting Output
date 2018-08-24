@@ -1,0 +1,4 @@
+Test 1: chunk(array,2)
+[["a", "b"], ["c", "d"]]
+Test 2: chunk(array,3)
+[["a", "b", "c"], ["d"]]
